@@ -1,0 +1,11 @@
+version: 1.0
+released: 2016-March-10
+# Twitter Replay Handlers
+twitterHandlers:
+- {appId: replay_01, consumerKey: , consumerSecret: }
+- {appId: replay_02, consumerKey: , consumerSecret: }
+- {appId: replay_03, consumerKey: , consumerSecret: }
+- {appId: replay_04, consumerKey: , consumerSecret: }
+lang: lang:ar
+jobINlocation: /data/twitter/jobs/IN
+jobOUTlocation: /data/twitter/jobs/OUT

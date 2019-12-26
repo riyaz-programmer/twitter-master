@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<appender name="replay" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Append>true</Append>
+    <File>/data/twitter/logs/applogs/replay.log</File>
+    <encoder>
+      <pattern>[%p] %d [%t] [%M]:%L ::  %m%n</pattern>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>DEBUG</level>
+    </filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <maxIndex>10</maxIndex>
+      <FileNamePattern>/data/twitter/logs/applogs/replay.log.%i</FileNamePattern>
+    </rollingPolicy>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>100MB</maxFileSize>
+    </triggeringPolicy>
+</appender>
+<logger name="replaylog"  level="DEBUG" additvity="false">
+     <appender-ref ref="replay" />
+</logger>
+
+</configuration>
