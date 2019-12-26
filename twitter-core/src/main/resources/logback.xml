@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<appender name="app" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Append>true</Append>
+    <File>/data/twitter/logs/applogs/app.log</File>
+    <encoder>
+      <pattern>[%p] %d [%t] [%M]:%L ::  %m%n</pattern>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>DEBUG</level>
+    </filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <maxIndex>10</maxIndex>
+      <FileNamePattern>/data/twitter/logs/applogs/app.log.%i</FileNamePattern>
+    </rollingPolicy>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>100MB</maxFileSize>
+    </triggeringPolicy>
+</appender>
+<appender name="id" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Append>true</Append>
+    <!-- Support multiple-JVM writing to the same log file -->
+    <prudent>true</prudent>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>/data/twitter/ids/%d{yyyy/MM/dd, UTC}/%d{yyyyMMdda, UTC}.txt</fileNamePattern>
+        <maxHistory>30</maxHistory>
+        <totalSizeCap>3GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+        <pattern>%msg%n</pattern>
+    </encoder>
+</appender>
+    <appender name="tweetappender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Append>true</Append>
+        <!-- Support multiple-JVM writing to the same log file -->
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/data/twitter/tweets/%d{yyyy/MM/dd, UTC}/%d{yyyyMMdda, UTC}.json</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+   <logger name="applog"  level="DEBUG" additvity="false">
+         <appender-ref ref="app" />
+         <!--<appender-ref ref="producerthread"/>-->
+    </logger>
+    <logger name="idlog" level="DEBUG" additvity="false">
+        <appender-ref ref="id" />
+    </logger>
+    <logger name="tweet" level="DEBUG" additvity="false">
+        <appender-ref ref="tweetappender" />
+    </logger>
+</configuration>
