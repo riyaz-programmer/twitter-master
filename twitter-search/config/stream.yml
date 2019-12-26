@@ -1,0 +1,27 @@
+version: 1.0
+released: 2016-March-10
+# Twitter Handlers
+twitterHandlers:
+- {appId: search_01, consumerKey: , consumerSecret: }
+- {appId: search_02, consumerKey: , consumerSecret: }
+- {appId: search_03, consumerKey: , consumerSecret: }
+- {appId: search_04, consumerKey: , consumerSecret: }
+- {appId: search_05, consumerKey: , consumerSecret: }
+- {appId: search_06, consumerKey: , consumerSecret: }
+- {appId: search_07, consumerKey: , consumerSecret: }
+- {appId: search_08, consumerKey: , consumerSecret: }
+- {appId: search_09, consumerKey: , consumerSecret: }
+- {appId: search_10, consumerKey: , consumerSecret: }
+- {appId: search_11, consumerKey: , consumerSecret: }
+- {appId: search_12, consumerKey: , consumerSecret: }
+- {appId: search_13, consumerKey: , consumerSecret: }
+- {appId: search_14, consumerKey: , consumerSecret: }
+- {appId: search_15, consumerKey: , consumerSecret: }
+- {appId: search_16, consumerKey: , consumerSecret: }
+- {appId: search_17, consumerKey: , consumerSecret: }
+- {appId: search_18, consumerKey: , consumerSecret: }
+- {appId: search_19, consumerKey: , consumerSecret: }
+- {appId: search_20, consumerKey: , consumerSecret: }
+lang: lang:ar
+jobINlocation: /data/twitter/jobs/IN
+jobOUTlocation: /data/twitter/jobs/OUT
